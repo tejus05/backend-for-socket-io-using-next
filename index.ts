@@ -19,6 +19,7 @@ const io = new Server(httpServer, {
 io.on("connection", (socket) => {
   console.log(`${socket.id}`)
   socket.on("sent-message", (message) => {
+    // console.log(message)
     io.emit("received-message",message)
   })
 })
